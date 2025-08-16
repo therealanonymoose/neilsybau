@@ -48,4 +48,7 @@ async def on_message(message):
         await message.channel.send(random.choice(bad_responses))
         return
 
+    if 'val' in lowered:
+        await message.channel.send('oh boy i cant wait to derank to iron 1')
+
 client.run(token)
