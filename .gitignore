@@ -1,2 +1,5 @@
 .env
-neil.png
+icons/
+
+__pycache__/
+*.pyc
