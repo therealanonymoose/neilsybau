@@ -18,7 +18,7 @@
             "gulp", "sip", "chow down", "feast", "devour", "nom", "wolf down", "dig in",
             "hungrily", "supper", "happy hour", "picnic", "potluck", "banquet",
             "mcdonalds", "kfc", "starbucks", "dominos", "chipotle", "wendys", "panera", "panda express",
-            "dunkin", "five guys", "brownie", "pudding", "mousse", "tart", "gelato", "fudge",
+            "dunkin", "five guys", "brownie", "pudding", "mousse", "gelato", "fudge",
             "cinnamon roll", "mocha", "matcha", "latte", "espresso", "mocktail",
             "pho", "gnocchi", "biryani", "shawarma", "samosa", "bruschetta", "tortilla", "risotto", "tagine"
         ],
@@ -36,7 +36,7 @@
     },
     "exercise": {
         "triggers": [
-            "exercise", "gym", "workout", "run", "walk", "pushup", "squat", "cardio", "plank", "yoga",
+            "exercise", "gym", "workout", "walk", "pushup", "squat", "cardio", "plank", "yoga",
             "sweat", "crossfit", "treadmill", "bench press", "deadlift", "burpee", "vegetable", "fruit",
             "salad", "kale", "spinach", "broccoli", "brussels sprouts", "protein shake", "smoothie",
             "diet", "paleo", "keto", "vegan", "fasting", "muscle", "gains", "abs", "biceps",
