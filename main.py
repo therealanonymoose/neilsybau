@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 import asyncio
 import random
+import json
 
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
@@ -11,6 +12,14 @@ target_id = int(os.getenv('TARGET_USER_ID'))
 intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
+
+with open("triggers.json", "r") as f:
+    data = json.load(f)
+
+triggers = data["food"]["triggers"]
+responses = data["food"]["responses"]
+bad_triggers = data["exercise"]["triggers"]
+bad_responses = data["exercise"]["responses"]
 
 @client.event
 async def on_ready():
@@ -21,79 +30,22 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.author.id == target_id:
-        if random.random() > 0.1:
-            return
-
-        emojis = ['🇸', '🇾', '🇧', '🇦', '🇺']
-        
-        #run everything at once
-        await asyncio.gather(
-            *(message.add_reaction(emoji) for emoji in emojis),
-            message.channel.send('neil sybau')
-        )
+    if message.author.id == target_id and random.random() <= 0.1:
+            emojis = ['🇸', '🇾', '🇧', '🇦', '🇺']
+            
+            #run everything at once
+            await asyncio.gather(
+                *(message.add_reaction(emoji) for emoji in emojis),
+                message.channel.send('neil sybau')
+            )
 
     lowered = message.content.lower()
-    responses = [
-        'im lowk hungry rn',
-        'i could go for some food',
-        'ima go grab sm to eat',
-        'food?',
-        'food is my middle name brochacho',
-        'bro im so hungry rn',
-        'ima eat you',
-        'ima have a snack',
-        'yo my doordash driver is fucking late bro'
-    ]
-    triggers = [
-        'food', 'eat', 'hungry', 'snack', 'dinner', 'lunch', 'breakfast', 'starving', 'meal', 'feast',
-        'drink', 'doordash', 'ubereats', 'grubhub', 'restaurant', 'cafe', 'bistro', 'diner', 'buffet',
-        'cuisine', 'dish', 'gourmet', 'tasty', 'yummy', 'delicious', 'craving', 'nourish', 'savor',
-        'bite', 'munch', 'chew', 'pizza', 'burger', 'fries', 'tacos', 'ramen', 'ice cream', 'cookies',
-        'cake', 'pastry', 'sandwich', 'salad', 'soup', 'noodles', 'pasta', 'steak', 'seafood', 'sushi',
-        'dim sum', 'boba', 'smoothie', 'milkshake', 'coffee', 'tea', 'juice', 'cocktail', 'beer',
-        'wine', 'soda', 'chips', 'popcorn', 'pretzel', 'candy', 'chocolate', 'donut', 'bagel', 'waffle',
-        'omelette', 'quiche', 'lasagna', 'curry', 'bbq', 'kebab', 'falafel', 'nachos',
-        'hotdog', 'sub', 'wrap', 'dumpling', 'pierogi', 'paella', 'fondue', 'mac', 'cheese',
-        'granola', 'yogurt', 'poke', 'ceviche', 'brunch', 'comfort food',
-        'cook', 'bake', 'boil', 'fry', 'grill', 'roast', 'simmer', 'sauté', 'blend',
-        'mix', 'chop', 'dice', 'whisk', 'season', 'marinate', 'stir', 'knead', 'poach', 'broil',
-        'spicy', 'sweet', 'salty', 'sour', 'bitter', 'tangy', 'creamy', 'crunchy', 'savory',
-        'fresh', 'hot', 'cold', 'juicy', 'zesty', 'flavorful', 'rich', 'buttery', 'crispy',
-        'gulp', 'sip', 'chow down', 'feast', 'devour', 'nom', 'wolf down', 'dig in',
-        'hungrily', 'supper', 'happy hour', 'picnic', 'potluck', 'banquet',
-        'mcdonalds', 'kfc', 'starbucks', 'dominos', 'chipotle', 'wendys', 'panera', 'panda express',
-        'dunkin', 'five guys', 'brownie', 'pudding', 'mousse', 'tart', 'gelato', 'fudge',
-        'cinnamon roll', 'mocha', 'matcha', 'latte', 'espresso', 'mocktail',
-        'pho', 'gnocchi', 'biryani', 'shawarma', 'samosa', 'bruschetta', 'tortilla', 'risotto', 'tagine'
-    ]
     if any(trigger in lowered for trigger in triggers):
         await message.channel.send(random.choice(responses))
         return
 
-    ew_triggers = [
-        'exercise', 'gym', 'workout', 'run', 'walk', 'pushup', 'squat', 'cardio', 'plank', 'yoga', 
-        'sweat', 'crossfit', 'treadmill', 'bench press', 'deadlift', 'burpee', 'vegetable', 'fruit',
-        'salad', 'kale', 'spinach', 'broccoli', 'brussels sprouts', 'protein shake', 'smoothie',
-        'diet', 'paleo', 'keto', 'vegan', 'fasting', 'sweat', 'muscle', 'gains', 'abs', 'biceps',
-        'triceps', 'leg day', 'soccer', 'football', 'basketball', 'baseball', 'tennis', 'golf', 'hockey', 'volleyball', 
-        'cricket', 'rugby', 'track', 'field', 'cross country', 'swimming', 'lacrosse', 'wrestling', 'gymnastics', 
-        'skiing', 'snowboarding', 'surfing', 'skateboarding', 'cycling', 'boxing', 'martial arts', 
-        'ping pong', 'badminton', 'rowing', 'fencing', 'curling', 'archery', 'climbing', 'hiking', 'triathlon',
-        'endurance', 'strength', 'flexibility', 'agility', 'stamina', 'reps', 'sets', 'athlet'
-    ]
-    ew_responses = [
-        'eww',
-        'please no', 
-        'hell nah', 
-        'censor that pls', 
-        'bro dont say that', 
-        'whats that',
-        'i hate this',
-        'ima stick to eating'
-    ]
-    if any(ew_trigger in lowered for ew_trigger in ew_triggers):
-        await message.channel.send(random.choice(ew_responses))
+    if any(bad_trigger in lowered for bad_trigger in bad_triggers):
+        await message.channel.send(random.choice(bad_responses))
         return
 
 client.run(token)
