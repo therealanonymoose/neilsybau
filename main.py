@@ -2,6 +2,7 @@ import discord
 from dotenv import load_dotenv
 import os
 import asyncio
+import random
 
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
@@ -21,6 +22,9 @@ async def on_message(message):
         return
 
     if message.author.id == target_id:
+        if random.random() > 0.05:
+            return
+
         emojis = ['🇸', '🇾', '🇧', '🇦', '🇺']
         
         #run everything at once
