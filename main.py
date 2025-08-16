@@ -53,22 +53,47 @@ async def on_message(message):
         'cake', 'pastry', 'sandwich', 'salad', 'soup', 'noodles', 'pasta', 'steak', 'seafood', 'sushi',
         'dim sum', 'boba', 'smoothie', 'milkshake', 'coffee', 'tea', 'juice', 'cocktail', 'beer',
         'wine', 'soda', 'chips', 'popcorn', 'pretzel', 'candy', 'chocolate', 'donut', 'bagel', 'waffle',
-        'pancake', 'omelette', 'quiche', 'lasagna', 'curry', 'bbq', 'kebab', 'falafel', 'nachos',
-        'hotdog', 'sub', 'wrap', 'dumpling', 'pierogi', 'paella', 'fondue', 'mac and cheese',
+        'omelette', 'quiche', 'lasagna', 'curry', 'bbq', 'kebab', 'falafel', 'nachos',
+        'hotdog', 'sub', 'wrap', 'dumpling', 'pierogi', 'paella', 'fondue', 'mac', 'cheese',
         'granola', 'yogurt', 'poke', 'ceviche', 'brunch', 'comfort food',
         'cook', 'bake', 'boil', 'fry', 'grill', 'roast', 'simmer', 'sauté', 'blend',
         'mix', 'chop', 'dice', 'whisk', 'season', 'marinate', 'stir', 'knead', 'poach', 'broil',
         'spicy', 'sweet', 'salty', 'sour', 'bitter', 'tangy', 'creamy', 'crunchy', 'savory',
         'fresh', 'hot', 'cold', 'juicy', 'zesty', 'flavorful', 'rich', 'buttery', 'crispy',
-        'gulp', 'sip', 'chow down', 'feast', 'devour', 'nom', 'nosh', 'wolf down', 'dig in',
+        'gulp', 'sip', 'chow down', 'feast', 'devour', 'nom', 'wolf down', 'dig in',
         'hungrily', 'supper', 'happy hour', 'picnic', 'potluck', 'banquet',
-        'mcdonalds', 'kfc', 'subway', 'starbucks', 'dominos', 'chipotle', 'wendys', 'panera', 'panda express',
-        'dunkin', 'five guys', 'brownie', 'pudding', 'mousse', 'cupcake', 'tart', 'macaron', 'gelato', 'fudge',
+        'mcdonalds', 'kfc', 'starbucks', 'dominos', 'chipotle', 'wendys', 'panera', 'panda express',
+        'dunkin', 'five guys', 'brownie', 'pudding', 'mousse', 'tart', 'gelato', 'fudge',
         'cinnamon roll', 'mocha', 'matcha', 'latte', 'espresso', 'mocktail',
         'pho', 'gnocchi', 'biryani', 'shawarma', 'samosa', 'bruschetta', 'tortilla', 'risotto', 'tagine'
     ]
     if any(trigger in lowered for trigger in triggers):
         await message.channel.send(random.choice(responses))
+        return
+
+    ew_triggers = [
+        'exercise', 'gym', 'workout', 'run', 'walk', 'pushup', 'squat', 'cardio', 'plank', 'yoga', 
+        'sweat', 'crossfit', 'treadmill', 'bench press', 'deadlift', 'burpee', 'vegetable', 'fruit',
+        'salad', 'kale', 'spinach', 'broccoli', 'brussels sprouts', 'protein shake', 'smoothie',
+        'diet', 'paleo', 'keto', 'vegan', 'fasting', 'sweat', 'muscle', 'gains', 'abs', 'biceps',
+        'triceps', 'leg day', 'soccer', 'football', 'basketball', 'baseball', 'tennis', 'golf', 'hockey', 'volleyball', 
+        'cricket', 'rugby', 'track', 'field', 'cross country', 'swimming', 'lacrosse', 'wrestling', 'gymnastics', 
+        'skiing', 'snowboarding', 'surfing', 'skateboarding', 'cycling', 'boxing', 'martial arts', 
+        'ping pong', 'badminton', 'rowing', 'fencing', 'curling', 'archery', 'climbing', 'hiking', 'triathlon',
+        'endurance', 'strength', 'flexibility', 'agility', 'stamina', 'reps', 'sets', 'athlet'
+    ]
+    ew_responses = [
+        'eww',
+        'please no', 
+        'hell nah', 
+        'censor that pls', 
+        'bro dont say that', 
+        'whats that',
+        'i hate this',
+        'ima stick to eating'
+    ]
+    if any(ew_trigger in lowered for ew_trigger in ew_triggers):
+        await message.channel.send(random.choice(ew_responses))
         return
 
 client.run(token)
