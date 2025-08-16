@@ -25,17 +25,21 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.author.id == target_id and random.random() <= 0.1:
-            emojis = ['🇸', '🇾', '🇧', '🇦', '🇺']
-            
-            #run everything at once
-            await asyncio.gather(
-                *(message.add_reaction(emoji) for emoji in emojis),
-                message.channel.send('neil sybau')
-            )
+    #sybau
+    if message.author.id == target_id and random.random() <= 0.2:
+        emojis = ['🇸', '🇾', '🇧', '🇦', '🇺']
+        
+        #run everything at once
+        await asyncio.gather(
+            *(message.add_reaction(emoji) for emoji in emojis),
+            message.channel.send('neil sybau')
+        )
 
+    #other triggers
     lowered = message.content.lower()
     for category in data.values():  #every json category
+        if random.random() > category.get('chance'):
+            continue
         triggers = category.get('triggers', [])
         responses = category.get('responses', [])
         if any(trigger in lowered for trigger in triggers):
