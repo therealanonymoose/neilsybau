@@ -13,13 +13,8 @@ intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
 
-with open("triggers.json", "r") as f:
+with open('triggers.json', 'r') as f:
     data = json.load(f)
-
-triggers = data["food"]["triggers"]
-responses = data["food"]["responses"]
-bad_triggers = data["exercise"]["triggers"]
-bad_responses = data["exercise"]["responses"]
 
 @client.event
 async def on_ready():
@@ -40,15 +35,11 @@ async def on_message(message):
             )
 
     lowered = message.content.lower()
-    if any(trigger in lowered for trigger in triggers):
-        await message.channel.send(random.choice(responses))
-        return
-
-    if any(bad_trigger in lowered for bad_trigger in bad_triggers):
-        await message.channel.send(random.choice(bad_responses))
-        return
-
-    if 'val' in lowered:
-        await message.channel.send('oh boy i cant wait to derank to iron 1')
+    for category in data.values():  #every json category
+        triggers = category.get('triggers', [])
+        responses = category.get('responses', [])
+        if any(trigger in lowered for trigger in triggers):
+            await message.channel.send(random.choice(responses))
+            return
 
 client.run(token)
