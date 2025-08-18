@@ -1,6 +1,6 @@
 {
     "food": {
-        "chance": 0.95,
+        "chance": 0.1,
         "triggers": [
             "food", "eat", "hungry", "snack", "dinner", "lunch", "breakfast", "starving", "meal", "feast",
             "drink", "doordash", "ubereats", "grubhub", "restaurant", "cafe", "bistro", "diner", "buffet",
@@ -36,7 +36,7 @@
         ]
     },
     "exercise": {
-        "chance": 0.95,
+        "chance": 0.1,
         "triggers": [
             "exercise", "gym", "workout", "walk", "pushup", "squat", "cardio", "plank", "yoga",
             "sweat", "crossfit", "treadmill", "bench press", "deadlift", "burpee", "vegetable", "fruit",
@@ -60,7 +60,7 @@
         ]
     },
     "val": {
-        "chance": 0.95,
+        "chance": 0.1,
         "triggers": [
             "val",
             "iron",
@@ -74,7 +74,7 @@
         ]
     },
     "fat": {
-        "chance": 0.95,
+        "chance": 0.1,
         "triggers": [
             "fat",
             "obese",
