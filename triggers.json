@@ -1,6 +1,6 @@
 {
     "food": {
-        "chance": 0.5,
+        "chance": 0.95,
         "triggers": [
             "food", "eat", "hungry", "snack", "dinner", "lunch", "breakfast", "starving", "meal", "feast",
             "drink", "doordash", "ubereats", "grubhub", "restaurant", "cafe", "bistro", "diner", "buffet",
@@ -36,7 +36,7 @@
         ]
     },
     "exercise": {
-        "chance": 0.3,
+        "chance": 0.95,
         "triggers": [
             "exercise", "gym", "workout", "walk", "pushup", "squat", "cardio", "plank", "yoga",
             "sweat", "crossfit", "treadmill", "bench press", "deadlift", "burpee", "vegetable", "fruit",
@@ -60,12 +60,36 @@
         ]
     },
     "val": {
-        "chance": 0.4,
+        "chance": 0.95,
         "triggers": [
-            "val"
+            "val",
+            "iron",
+            "bronze"
         ],
         "responses": [
-            "oh boy i cant wait to derank to iron 1"
+            "oh boy i cant wait to derank to iron 1",
+            "I am trash asf",
+            "I miss all the headshots",
+            "Aim for the body my fat bros"
+        ]
+    },
+    "fat": {
+        "chance": 0.95,
+        "triggers": [
+            "fat",
+            "obese",
+            "huge",
+            "big back",
+            "overweight",
+            "oversized"
+        ],
+        "responses": [
+            "I am massive",
+            "I am humongous",
+            "Fat is my middle name",
+            "Can't spell obese without sushant",
+            "Im a planet the way im spherical",
+            "Im so dense they call the the biggest black hole"
         ]
     }
 }
