@@ -11,7 +11,7 @@
             "wine", "soda", "chips", "popcorn", "pretzel", "candy", "chocolate", "donut", "bagel", "waffle",
             "omelette", "quiche", "lasagna", "curry", "bbq", "kebab", "falafel", "nachos",
             "hotdog", "sub", "wrap", "dumpling", "pierogi", "paella", "fondue", "mac", "cheese",
-            "granola", "yogurt", "poke", "ceviche", "brunch", "comfort food",
+            "granola", "yogurt", "ceviche", "brunch", "comfort food",
             "cook", "bake", "boil", "fry", "grill", "roast", "simmer", "sauté", "blend",
             "mix", "chop", "dice", "whisk", "season", "marinate", "stir", "knead", "poach", "broil",
             "spicy", "sweet", "salty", "sour", "bitter", "tangy", "creamy", "crunchy", "savory",
@@ -68,9 +68,9 @@
         ],
         "responses": [
             "oh boy i cant wait to derank to iron 1",
-            "I am trash asf",
-            "I miss all the headshots",
-            "Aim for the body my fat bros"
+            "i am trash asf",
+            "i miss all the headshots",
+            "aim for the body my fat bros"
         ]
     },
     "fat": {
@@ -84,12 +84,12 @@
             "oversized"
         ],
         "responses": [
-            "I am massive",
-            "I am humongous",
-            "Fat is my middle name",
-            "Can't spell obese without sushant",
-            "Im a planet the way im spherical",
-            "Im so dense they call the the biggest black hole"
+            "i am massive",
+            "i am humongous",
+            "fat is my middle name",
+            "cant spell obese without sushant",
+            "im a planet the way im spherical",
+            "im so dense they call the the biggest black hole"
         ]
     },
     "neil": {
@@ -101,7 +101,7 @@
             "joltik"
         ],
         "responses": [
-            "yo that kid it fat asf",
+            "yo that kid is fat asf",
             "bro i hate that guy",
             "i hate neil"
         ]
