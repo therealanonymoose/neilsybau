@@ -91,5 +91,19 @@
             "Im a planet the way im spherical",
             "Im so dense they call the the biggest black hole"
         ]
+    },
+    "neil": {
+        "chance": 0.4,
+        "triggers": [
+            "neil",
+            "khatawani",
+            "bobmelon",
+            "joltik"
+        ],
+        "responses": [
+            "yo that kid it fat asf",
+            "bro i hate that guy",
+            "i hate neil"
+        ]
     }
 }
